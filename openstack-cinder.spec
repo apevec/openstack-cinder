@@ -8,7 +8,7 @@ Summary:          OpenStack Volume service
 Group:            Applications/System
 License:          ASL 2.0
 URL:              http://www.openstack.org/software/openstack-storage/
-Source0:          https://launchpad.net/cinder/havana/havana-1/+download/cinder-%{version}.b2.tar.gz
+Source0:          https://launchpad.net/cinder/havana/havana-2/+download/cinder-%{version}.b2.tar.gz
 Source1:          cinder.conf
 Source2:          cinder.logrotate
 Source3:          cinder-tgt.conf
@@ -325,7 +325,7 @@ fi
 * Thu Apr 04 2013 Eric Harney <eharney@redhat.com> - 2013.1-1
 - Update to Grizzly final release
 
-* Mon Mar 27 2013 Eric Harney <eharney@redhat.com> - 2013.1-0.5.rc3
+* Wed Mar 27 2013 Eric Harney <eharney@redhat.com> - 2013.1-0.5.rc3
 - Update to Grizzly RC3 release
 
 * Mon Mar 25 2013 Eric Harney <eharney@redhat.com> - 2013.1-0.5.rc2
