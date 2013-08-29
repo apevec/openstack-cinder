@@ -2,7 +2,7 @@
 
 Name:             openstack-cinder
 Version:          2013.2
-Release:          0.5.b2%{?dist}
+Release:          0.7.b2%{?dist}
 Summary:          OpenStack Volume service
 
 Group:            Applications/System
@@ -73,6 +73,7 @@ Requires:         sudo
 Requires:         MySQL-python
 
 Requires:         qemu-img
+Requires:         sysfsutils
 
 Requires:         python-paramiko
 
@@ -308,6 +309,9 @@ fi
 %endif
 
 %changelog
+* Thu Aug 29 2013 Pádraig Brady <pbrady@redhat.com> - 2013.2-0.7.b2
+- Add dependency on sysfsutils to support the fiber channel driver
+
 * Mon Aug 26 2013 Eric Harney <eharney@redhat.com> - 2013.2-0.5.b2
 - Add cinder-backup service init script
 
