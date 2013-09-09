@@ -1,12 +1,12 @@
-From 283315756c625cebafb49fce782e5bd860606d52 Mon Sep 17 00:00:00 2001
+From 6ed6db76f6e6b1a579d07c3db63283d444385c14 Mon Sep 17 00:00:00 2001
 From: Eric Harney <eharney@redhat.com>
 Date: Thu, 13 Jun 2013 17:50:12 -0400
 Subject: [PATCH] Remove runtime dep on python-pbr, python-d2to1
 
 Requires RPM spec to fill in REDHATCINDERVERSION.
 ---
- cinder/version.py |   16 +++++++++++++---
- 1 files changed, 13 insertions(+), 3 deletions(-)
+ cinder/version.py | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
 diff --git a/cinder/version.py b/cinder/version.py
 index ad1ebc0..b4f6fd8 100644
