@@ -20,6 +20,7 @@ suffix=scheduler
 prog=openstack-cinder-$suffix
 exec="/usr/bin/cinder-$suffix"
 config="/etc/cinder/cinder.conf"
+distconfig="/usr/share/cinder/cinder-dist.conf"
 pidfile="/var/run/cinder/cinder-$suffix.pid"
 logfile="/var/log/cinder/$suffix.log"
 
@@ -31,7 +32,7 @@ start() {
     [ -x $exec ] || exit 5
     [ -f $config ] || exit 6
     echo -n $"Starting $prog: "
-    daemon --user cinder --pidfile $pidfile "$exec --config-file $config --logfile $logfile &>/dev/null & echo \$! > $pidfile"
+    daemon --user cinder --pidfile $pidfile "$exec --config-file $distconfig --config-file $config --logfile $logfile &>/dev/null & echo \$! > $pidfile"
     retval=$?
     echo
     [ $retval -eq 0 ] && touch $lockfile
