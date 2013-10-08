@@ -1,4 +1,4 @@
-From bd1bfd86fbeacd893ff5d9abb969c7b0c994fbf4 Mon Sep 17 00:00:00 2001
+From da442c0b3fe03c19bb2a6208248c5bbbedf7e57c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Mon, 22 Jul 2013 03:14:27 +0100
 Subject: [PATCH] Revert "Use oslo.sphinx and remove local copy of doc theme"
@@ -1201,7 +1201,7 @@ index 0000000..e039fe0
 +pygments_style = friendly
 +
 diff --git a/doc/source/conf.py b/doc/source/conf.py
-index 7a2bf1a..01bd3b4 100644
+index 238a922..58fc367 100644
 --- a/doc/source/conf.py
 +++ b/doc/source/conf.py
 @@ -33,9 +33,7 @@ extensions = ['sphinx.ext.autodoc',
@@ -1227,12 +1227,11 @@ index 7a2bf1a..01bd3b4 100644
  # Theme options are theme-specific and customize the look and feel of a theme
  # further.  For a list of options available for each theme, see the
 diff --git a/test-requirements.txt b/test-requirements.txt
-index 3d8e9bf..f83b20b 100644
+index 35f6c82..895a523 100644
 --- a/test-requirements.txt
 +++ b/test-requirements.txt
-@@ -12,5 +12,4 @@ sphinx>=1.1.2
+@@ -12,4 +12,3 @@ sphinx>=1.1.2
  python-subunit
  testtools>=0.9.32
  testrepository>=0.0.17
 -oslo.sphinx
- python-novaclient>=2.12.0
