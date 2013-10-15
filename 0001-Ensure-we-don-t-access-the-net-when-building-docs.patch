@@ -1,4 +1,4 @@
-From da36f9affecf1cd34b8c1d052eaae6912fcb4f63 Mon Sep 17 00:00:00 2001
+From b451bd91ae412a0c5b0eabcaf80b6e76516ea110 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Fri, 21 Sep 2012 13:33:26 +0100
 Subject: [PATCH] Ensure we don't access the net when building docs
