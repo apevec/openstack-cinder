@@ -1,4 +1,4 @@
-From 79ca23e5b31ac3bf9197b8b2b15d2ae755a6f9f9 Mon Sep 17 00:00:00 2001
+From 6519767a99f4faf8f839d5324b8764ae7aa30a85 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Wed, 24 Oct 2012 13:44:37 +0100
 Subject: [PATCH] Use updated parallel install versions of epel package
