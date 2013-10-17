@@ -252,16 +252,13 @@ fi
 exit 0
 
 %post
-if [ $1 -eq 1 ] ; then
-    # Initial installation
-    for svc in volume api scheduler; do
-        /sbin/chkconfig --add openstack-cinder-$svc
-    done
-fi
+for svc in volume api scheduler backup; do
+    /sbin/chkconfig --add openstack-cinder-$svc
+done
 
 %preun
 if [ $1 -eq 0 ] ; then
-    for svc in volume api scheduler; do
+    for svc in volume api scheduler backup; do
         /sbin/service openstack-cinder-${svc} stop > /dev/null 2>&1
         /sbin/chkconfig --del openstack-cinder-${svc}
     done
@@ -270,7 +267,7 @@ fi
 %postun
 if [ $1 -ge 1 ] ; then
     # Package upgrade, not uninstall
-    for svc in volume api scheduler; do
+    for svc in volume api scheduler backup; do
         /sbin/service openstack-cinder-${svc} condrestart > /dev/null 2>&1 || :
     done
 fi
@@ -314,6 +311,7 @@ fi
 %changelog
 * Thu Oct 17 2013 Eric Harney <eharney@redhat.com> - 2013.2-1
 - Update to 2013.2 (Havana)
+- Handle cinder-backup service registration/restart/removal
 
 * Wed Oct 16 2013 Eric Harney <eharney@redhat.com> - 2013.2-0.13.rc3
 - Update to Havana RC3
