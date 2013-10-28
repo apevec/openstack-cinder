@@ -2,7 +2,7 @@
 
 Name:             openstack-cinder
 Version:          2013.2
-Release:          1%{?dist}
+Release:          2%{?dist}
 Summary:          OpenStack Volume service
 
 Group:            Applications/System
@@ -31,6 +31,7 @@ Patch0001: 0001-Ensure-we-don-t-access-the-net-when-building-docs.patch
 Patch0002: 0002-Use-updated-parallel-install-versions-of-epel-packag.patch
 Patch0003: 0003-Remove-runtime-dep-on-python-pbr-python-d2to1.patch
 Patch0004: 0004-Revert-Use-oslo.sphinx-and-remove-local-copy-of-doc-.patch
+Patch0005: 0005-GlusterFS-set-correct-filename-when-cloning-volume.patch
 
 BuildArch:        noarch
 BuildRequires:    intltool
@@ -146,6 +147,7 @@ This package contains documentation files for cinder.
 %patch0002 -p1
 %patch0003 -p1
 %patch0004 -p1
+%patch0005 -p1
 
 find . \( -name .gitignore -o -name .placeholder \) -delete
 
@@ -309,6 +311,9 @@ fi
 %endif
 
 %changelog
+* Mon Oct 28 2013 Eric Harney <eharney@redhat.com> - 2013.2-2
+- Fix GlusterFS volume driver clone operations
+
 * Thu Oct 17 2013 Eric Harney <eharney@redhat.com> - 2013.2-1
 - Update to 2013.2 (Havana)
 - Handle cinder-backup service registration/restart/removal
