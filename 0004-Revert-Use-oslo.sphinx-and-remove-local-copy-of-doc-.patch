@@ -1,4 +1,4 @@
-From 29727ac03ac5db741d4f80f284a6f2aea54c30eb Mon Sep 17 00:00:00 2001
+From d7ae86b23d7af8edf42e3cb3992f6ae17fbe3068 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Mon, 22 Jul 2013 03:14:27 +0100
 Subject: [PATCH] Revert "Use oslo.sphinx and remove local copy of doc theme"
@@ -1227,10 +1227,10 @@ index 238a922..58fc367 100644
  # Theme options are theme-specific and customize the look and feel of a theme
  # further.  For a list of options available for each theme, see the
 diff --git a/test-requirements.txt b/test-requirements.txt
-index 35f6c82..895a523 100644
+index 6159c98..9d2efbb 100644
 --- a/test-requirements.txt
 +++ b/test-requirements.txt
-@@ -12,4 +12,3 @@ sphinx>=1.1.2
+@@ -12,4 +12,3 @@ sphinx>=1.1.2,<1.2
  python-subunit
  testtools>=0.9.32
  testrepository>=0.0.17
