@@ -2,7 +2,7 @@
 
 Name:             openstack-cinder
 Version:          2014.1
-Release:          0.2.b1%{?dist}
+Release:          0.2.b1.LIO%{?dist}
 Summary:          OpenStack Volume service
 
 Group:            Applications/System
@@ -48,7 +48,7 @@ Requires(postun): systemd-units
 Requires(pre):    shadow-utils
 
 Requires:         lvm2
-Requires:         scsi-target-utils
+Requires:         python-rtslib
 
 %description
 OpenStack Volume (codename Cinder) provides services to manage and
