@@ -1,7 +1,7 @@
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 
 Name:             openstack-cinder
-Version:          2013.2.1
+Version:          2013.2.2
 Release:          1%{?dist}
 Summary:          OpenStack Volume service
 
@@ -25,7 +25,7 @@ Source130:        openstack-cinder-backup.upstart
 Source20:         cinder-sudoers
 
 #
-# patches_base=2013.2.1
+# patches_base=2013.2.2
 #
 Patch0001: 0001-Ensure-we-don-t-access-the-net-when-building-docs.patch
 Patch0002: 0002-Use-updated-parallel-install-versions-of-epel-packag.patch
@@ -309,6 +309,9 @@ fi
 %endif
 
 %changelog
+* Wed Feb 19 2014 Pádraig Brady <pbrady@redhat.com> - 2013.2.2-1
+- Update to Havana stable release 2
+
 * Tue Dec 17 2013 Eric Harney <eharney@redhat.com> - 2013.2.1-1
 - Update to Havana stable release 1
 

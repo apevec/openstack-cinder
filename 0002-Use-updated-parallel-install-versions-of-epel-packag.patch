@@ -1,4 +1,4 @@
-From 0727955cf3782523d98a9adae8a5a60f3f3f1a09 Mon Sep 17 00:00:00 2001
+From b0c1bbc78c5a5e5890e528e97bcfcdf258f90f1e Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Wed, 24 Oct 2012 13:44:37 +0100
 Subject: [PATCH] Use updated parallel install versions of epel package
@@ -11,9 +11,9 @@ Delve into pkg_resources a little to get it to modify sys.path,
 so that our parallel installed egg takes precedence over the
 system default module versions.
 ---
- bin/cinder-manage                 |  4 +++-
- cinder/__init__.py                | 30 ++++++++++++++++++++++++++++++
- cinder/db/sqlalchemy/migration.py |  7 ++++++-
+ bin/cinder-manage                 |    4 +++-
+ cinder/__init__.py                |   30 ++++++++++++++++++++++++++++++
+ cinder/db/sqlalchemy/migration.py |    7 ++++++-
  3 files changed, 39 insertions(+), 2 deletions(-)
 
 diff --git a/bin/cinder-manage b/bin/cinder-manage

@@ -1,4 +1,4 @@
-From d7ae86b23d7af8edf42e3cb3992f6ae17fbe3068 Mon Sep 17 00:00:00 2001
+From b7e403595425f2633c8db9bcc1f2852e304ad22a Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Mon, 22 Jul 2013 03:14:27 +0100
 Subject: [PATCH] Revert "Use oslo.sphinx and remove local copy of doc theme"
@@ -9,19 +9,15 @@ Conflicts:
 
 	test-requirements.txt
 ---
- doc/source/_static/.gitignore      |   0
- doc/source/_static/.placeholder    |   0
- doc/source/_static/basic.css       | 416 +++++++++++++++++++++++++++++++++++++
- doc/source/_static/default.css     | 230 ++++++++++++++++++++
- doc/source/_static/jquery.tweet.js | 154 ++++++++++++++
- doc/source/_static/tweaks.css      | 218 +++++++++++++++++++
- doc/source/_templates/.gitignore   |   0
- doc/source/_templates/.placeholder |   0
- doc/source/_theme/layout.html      |  95 +++++++++
- doc/source/_theme/theme.conf       |   5 +
- doc/source/conf.py                 |   8 +-
- test-requirements.txt              |   1 -
- 12 files changed, 1121 insertions(+), 6 deletions(-)
+ doc/source/_static/basic.css       |  416 ++++++++++++++++++++++++++++++++++++
+ doc/source/_static/default.css     |  230 ++++++++++++++++++++
+ doc/source/_static/jquery.tweet.js |  154 +++++++++++++
+ doc/source/_static/tweaks.css      |  218 +++++++++++++++++++
+ doc/source/_theme/layout.html      |   95 ++++++++
+ doc/source/_theme/theme.conf       |    5 +
+ doc/source/conf.py                 |    8 +-
+ test-requirements.txt              |    1 -
+ 8 files changed, 1121 insertions(+), 6 deletions(-)
  create mode 100644 doc/source/_static/.gitignore
  create mode 100644 doc/source/_static/.placeholder
  create mode 100644 doc/source/_static/basic.css
