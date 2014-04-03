@@ -1,14 +1,18 @@
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
+%global release_name havana
+%global project cinder
+Source0:        http://tarballs.openstack.org/%{project}/%{project}-stable-%{release_name}.tar.gz
+%global devtag %(tar ztf %{SOURCE0} 2>/dev/null | head -1 | rev | cut -d. -f2 | rev)
+%global devrel %(tar ztf %{SOURCE0} 2>/dev/null | head -1 | rev | cut -d. -f3-5 | cut -d- -f1 | rev)
 
 Name:             openstack-cinder
-Version:          2013.2.2
-Release:          1%{?dist}
+Version:          %{devrel}
+Release:          0.1.%{devtag}%{?dist}
 Summary:          OpenStack Volume service
 
 Group:            Applications/System
 License:          ASL 2.0
 URL:              http://www.openstack.org/software/openstack-storage/
-Source0:          https://launchpad.net/cinder/havana/%{version}/+download/cinder-%{version}.tar.gz
 Source1:          cinder-dist.conf
 Source2:          cinder.logrotate
 Source3:          cinder-tgt.conf
@@ -25,7 +29,7 @@ Source130:        openstack-cinder-backup.upstart
 Source20:         cinder-sudoers
 
 #
-# patches_base=2013.2.2
+# patches_base=gerrit/stable/havana
 #
 Patch0001: 0001-Ensure-we-don-t-access-the-net-when-building-docs.patch
 Patch0002: 0002-Use-updated-parallel-install-versions-of-epel-packag.patch
@@ -140,8 +144,8 @@ This package contains documentation files for cinder.
 %endif
 
 %prep
-%setup -q -n cinder-%{version}
-
+%setup -q -c -T
+tar --strip-components=1 -zxf %{SOURCE0}
 %patch0001 -p1
 %patch0002 -p1
 %patch0003 -p1
@@ -161,6 +165,7 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 # We add REDHATCINDERVERSION/RELEASE with the pbr removal patch
 sed -i s/REDHATCINDERVERSION/%{version}/ cinder/version.py
 sed -i s/REDHATCINDERRELEASE/%{release}/ cinder/version.py
+sed -i 's/^Version: .*/Version: %{version}/' PKG-INFO
 
 %build
 
